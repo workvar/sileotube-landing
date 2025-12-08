@@ -1,12 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Home, PlaySquare, Monitor } from 'lucide-react';
 import ShowcaseTabs from './ShowcaseTabs';
 import ShowcaseDisplay from './ShowcaseDisplay';
 
 const Showcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
+
+  // automatcally rotate through the tabs
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % tabs.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const tabs = [
     {

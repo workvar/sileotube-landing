@@ -12,7 +12,7 @@ interface ShowcaseTabsProps {
 
 const ShowcaseTabs: React.FC<ShowcaseTabsProps> = ({ tabs, activeTab, setActiveTab }) => {
   return (
-    <div className="lg:w-1/3 flex flex-col gap-4">
+    <div className="lg:w-1/3 flex flex-col gap-4 my-auto">
       {tabs.map((tab, idx) => (
         <button
           key={idx}

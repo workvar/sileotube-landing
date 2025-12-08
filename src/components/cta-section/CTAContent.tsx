@@ -9,11 +9,11 @@ const CTAContent: React.FC<CTAContentProps> = ({ onOpenModal }) => {
     <div>
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 text-brand-red text-xs font-bold uppercase tracking-wide mb-6">
         <CheckCircle2 size={14} />
-        <span>100% Free & Open Source</span>
+        <span>100% Free forever</span>
       </div>
       <h2 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-6 tracking-tight leading-[1.1]">
         Reclaim your <br/>
-        <span className="text-zinc-400">focus today.</span>
+        <span className="bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">focus today.</span>
       </h2>
       <p className="text-zinc-600 text-xl mb-10 max-w-lg leading-relaxed">
         Stop fighting the algorithm. Start using YouTube as the educational tool it was meant to be.

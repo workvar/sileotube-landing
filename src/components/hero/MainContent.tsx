@@ -22,10 +22,10 @@ const MainContent: React.FC<MainContentProps> = ({ isFocusedMode }) => {
 
       <div className="flex-1 p-8 md:p-12 flex items-center justify-center bg-white transition-all duration-700">
         {/* Video Player */}
-        <div className={`transition-all duration-700 ease-in-out bg-zinc-900 rounded-lg shadow-sm relative overflow-hidden group/video ${isFocusedMode ? 'w-full max-w-5xl aspect-video shadow-2xl scale-105' : 'w-full max-w-3xl aspect-video scale-100'}`}>
+        <div className={`transition-all duration-700 ease-in-out bg-zinc-900 rounded-lg shadow-sm relative overflow-hidden group/video ${isFocusedMode ? 'w-full max-w-[90vw] aspect-video shadow-2xl scale-110' : 'w-full max-w-3xl aspect-video scale-100'}`}>
           {/* Video Placeholder */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <PlayCircle size={64} className="text-zinc-600" />
+            <PlayCircle size={isFocusedMode ? 80 : 64} className="text-zinc-600 transition-all duration-700" />
           </div>
           {/* Progress Bar */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-zinc-800">

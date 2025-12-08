@@ -59,7 +59,7 @@ const Showcase: React.FC = () => {
     <section className="py-24 bg-zinc-50 border-t border-zinc-200">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6">Experience the Difference</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6">Experience the <span className="bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">Difference</span><br />Get your time back.</h2>
           <p className="text-xl text-zinc-500 max-w-2xl mx-auto">See how SileoTube transforms your YouTube interface into a tool for learning, not scrolling.</p>
         </div>
 

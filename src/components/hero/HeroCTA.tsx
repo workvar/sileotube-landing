@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { EXTENSION_URL, FIREFOX_URL, EDGE_URL } from '@/constants';
 import BrowserDropdown from './BrowserDropdown';
 
 interface HeroCTAProps {

@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
-import { EXTENSION_URL, FIREFOX_URL, EDGE_URL } from '@/constants';
+import { EXTENSION_URL, FIREFOX_URL, EDGE_URL, BROWSER_LOGOS } from '@/constants';
 import { useState } from 'react';
 
 interface BrowserDropdownProps {
@@ -14,21 +14,21 @@ const BrowserDropdown: React.FC<BrowserDropdownProps> = ({ isOpen }) => {
   const browsers = [
     {
       href: EXTENSION_URL,
-      icon: "https://ik.imagekit.io/canarygrapher/workvar/main-website/icons/chrome_A_Pz2qvUB?updatedAt=1762167034398",
+      icon: BROWSER_LOGOS.chrome,
       name: "Chrome Web Store",
       version: "Version 50+",
       color: "blue",
     },
     {
       href: FIREFOX_URL,
-      icon: "https://ik.imagekit.io/canarygrapher/assets/browser-logos/firefox_45x45.png",
+      icon: BROWSER_LOGOS.firefox,
       name: "Firefox Add-ons",
       version: "Version 100+",
       color: "orange",
     },
     {
       href: EDGE_URL,
-      icon: "https://ik.imagekit.io/canarygrapher/assets/browser-logos/edge_45x45.png",
+      icon: BROWSER_LOGOS.edge,
       name: "Microsoft Edge",
       version: "Version 39+",
       color: "sky",

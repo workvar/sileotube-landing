@@ -1,6 +1,7 @@
 'use client';
 
 import { Star, Quote } from 'lucide-react';
+import { BROWSER_LOGOS } from '@/constants';
 
 interface Review {
   name: string;
@@ -39,15 +40,15 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ review }) => {
               {(() => {
                 const storeSrcMap: { [key: string]: { src: string; alt: string } } = {
                   chrome: {
-                    src: "https://ik.imagekit.io/canarygrapher/workvar/main-website/icons/chrome_A_Pz2qvUB?updatedAt=1762167034398",
+                    src: BROWSER_LOGOS.chrome,
                     alt: "Chrome Web Store"
                   },
                   edge: {
-                    src: "https://ik.imagekit.io/canarygrapher/assets/browser-logos/edge_45x45.png",
+                    src: BROWSER_LOGOS.edge,
                     alt: "Edge Add-ons"
                   },
                   firefox: {
-                    src: "https://ik.imagekit.io/canarygrapher/assets/browser-logos/firefox_45x45.png",
+                    src: BROWSER_LOGOS.firefox,
                     alt: "Firefox Add-ons"
                   },
                 };

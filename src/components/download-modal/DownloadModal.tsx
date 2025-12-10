@@ -1,7 +1,7 @@
 'use client';
 
 import { X } from 'lucide-react';
-import { EXTENSION_URL, FIREFOX_URL, EDGE_URL } from '@/constants';
+import { EXTENSION_URL, FIREFOX_URL, EDGE_URL, BROWSER_LOGOS } from '@/constants';
 import BrowserOption from './BrowserOption';
 import { useEffect, useState } from 'react';
 
@@ -75,21 +75,21 @@ const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose }) => {
         <div className="space-y-3">
           <BrowserOption
             href={EXTENSION_URL}
-            icon="https://ik.imagekit.io/canarygrapher/workvar/main-website/icons/chrome_A_Pz2qvUB?updatedAt=1762167034398"
+            icon={BROWSER_LOGOS.chrome}
             name="Google Chrome"
             version="Version 50+"
             hoverColor="blue"
           />
           <BrowserOption
             href={FIREFOX_URL}
-            icon="https://ik.imagekit.io/canarygrapher/workvar/main-website/icons/firefox_eOCdiEU-fJ.svg?updatedAt=1762366573154"
+            icon={BROWSER_LOGOS.firefox}
             name="Mozilla Firefox"
             version="Version 100+"
             hoverColor="orange"
-          />
+          />  
           <BrowserOption
             href={EDGE_URL}
-            icon="https://ik.imagekit.io/canarygrapher/workvar/main-website/icons/edge_qzRsb17gT?updatedAt=1762167034398"
+            icon={BROWSER_LOGOS.edge}
             name="Microsoft Edge"
             version="Version 39+"
             hoverColor="sky"

@@ -7,6 +7,7 @@ interface Review {
   image: string;
   text: string;
   highlight: string;
+  source: string;
 }
 
 interface TestimonialCardProps {
@@ -35,8 +36,42 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ review }) => {
           <div>
             <div className="text-zinc-900 font-bold text-sm">{review.name}</div>
             <div className="text-zinc-400 text-xs flex items-center gap-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-              Verified User
+              {(() => {
+                const storeSrcMap: { [key: string]: { src: string; alt: string } } = {
+                  chrome: {
+                    src: "https://ik.imagekit.io/canarygrapher/workvar/main-website/icons/chrome_A_Pz2qvUB?updatedAt=1762167034398",
+                    alt: "Chrome Web Store"
+                  },
+                  edge: {
+                    src: "https://ik.imagekit.io/canarygrapher/assets/browser-logos/edge_45x45.png",
+                    alt: "Edge Add-ons"
+                  },
+                  firefox: {
+                    src: "https://ik.imagekit.io/canarygrapher/assets/browser-logos/firefox_45x45.png",
+                    alt: "Firefox Add-ons"
+                  },
+                };
+
+                const lowerSource = review.source.toLowerCase();
+                let storeLogo = null;
+
+                if (lowerSource.includes('chrome')) {
+                  storeLogo = storeSrcMap.chrome;
+                } else if (lowerSource.includes('edge')) {
+                  storeLogo = storeSrcMap.edge;
+                } else if (lowerSource.includes('firefox')) {
+                  storeLogo = storeSrcMap.firefox;
+                }
+
+                return storeLogo ? (
+                  <img
+                    src={storeLogo.src}
+                    alt={storeLogo.alt}
+                    className="w-4 h-4 rounded-sm"
+                  />
+                ) : null;
+              })()}
+              {review.source}
             </div>
           </div>
         </div>

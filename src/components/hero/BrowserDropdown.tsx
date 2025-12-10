@@ -21,14 +21,14 @@ const BrowserDropdown: React.FC<BrowserDropdownProps> = ({ isOpen }) => {
     },
     {
       href: FIREFOX_URL,
-      icon: "https://ik.imagekit.io/canarygrapher/workvar/main-website/icons/firefox_eOCdiEU-fJ.svg?updatedAt=1762366573154",
+      icon: "https://ik.imagekit.io/canarygrapher/assets/browser-logos/firefox_45x45.png",
       name: "Firefox Add-ons",
       version: "Version 100+",
       color: "orange",
     },
     {
       href: EDGE_URL,
-      icon: "https://ik.imagekit.io/canarygrapher/workvar/main-website/icons/edge_qzRsb17gT?updatedAt=1762167034398",
+      icon: "https://ik.imagekit.io/canarygrapher/assets/browser-logos/edge_45x45.png",
       name: "Microsoft Edge",
       version: "Version 39+",
       color: "sky",

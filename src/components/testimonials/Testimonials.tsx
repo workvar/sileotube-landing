@@ -6,19 +6,22 @@ const reviews = [
     name: "Akshat",
     image: "https://lh3.googleusercontent.com/a-/ALV-UjW7iDks9xGHZlbEMT-aIFeJ6LLzRVvvhGbIetLsMZ7CJwkzhd0G=s48-w48-h48",
     text: "Helps me stay focused on my tasks and not let distractions get the better of me.",
-    highlight: "Stay focused"
+    highlight: "Stay focused",
+    source: "Chrome Web Store"
   },
   {
     name: "לירן בלומנברג",
     image: "https://lh3.googleusercontent.com/a-/ALV-UjUG8aqgMlvQklUzIIszUUbISA68WoByw6eX2-_fRtWGnVGOGvaeJw=s48-w48-h48",
     text: "Really clean and peaceful YouTube experience. No distractions, no endless scroll just the video I actually want to watch. Perfect for studying or focusing.",
-    highlight: "Peaceful experience"
+    highlight: "Peaceful experience",
+    source: "Chrome Web Store"
   },
   {
     name: "Yash",
     image: "https://lh3.googleusercontent.com/a/ACg8ocK9fYAD_zXtd4Z-AslhBBPr1b2kkgNM1_AzO3Ni1IwnkknYq1dozg=s48-w48-h48",
     text: "Helps me focus on Youtube properly. Earlier, I used to get lost in the endless recommendation loop. Now, I watch what I want, and exit YouTube before it's too late.",
-    highlight: "Exit before it's too late"
+    highlight: "Exit before it's too late",
+    source: "Chrome Web Store"
   }
 ];
 

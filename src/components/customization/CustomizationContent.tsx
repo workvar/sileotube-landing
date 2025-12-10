@@ -12,7 +12,7 @@ const CustomizationContent = () => {
         <span className="bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">Your Internet.</span>
       </h2>
       <p className="text-lg text-zinc-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-        SileoTube isn't just a blocker; it's a productivity suite. Every feature is customizable, so you can tailor your YouTube experience to match your workflow.
+        SileoTube is not a YouTube blocker, it's a productivity suite. Every feature is customizable, so you can tailor your YouTube experience to match your workflow.
       </p>
       
       <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-sm text-zinc-500 font-medium">

@@ -1,12 +1,12 @@
 const HeroHeader = () => {
   return (
     <div className="max-w-4xl mx-auto mb-12 animate-fade-in">
-      <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-red/10 via-brand-red/5 to-transparent border border-brand-red/20 text-xs font-semibold tracking-wide text-brand-red uppercase backdrop-blur-sm shadow-sm">
+      <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-gradient-to-r from-green-600/10 via-green-800/5 to-transparent border border-green-800/20 text-xs font-semibold tracking-wide text-green-800 uppercase backdrop-blur-sm shadow-sm">
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-800 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-800"></span>
         </span>
-        v2.0 Now Available
+        v2.1 Now Available
       </div>
       <h1 className="text-6xl md:text-8xl font-bold text-zinc-900 leading-[1.05] mb-8 tracking-tight relative">
         <span className="relative inline-block">

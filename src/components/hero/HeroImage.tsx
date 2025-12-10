@@ -63,7 +63,7 @@ const HeroImage = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-6xl animate-slide-up pb-32 -mt-10 md:-mt-20 z-10" style={{ animationDelay: '0.3s' }}>
+    <div className="relative w-full max-w-6xl animate-slide-up pb-32 z-10" style={{ animationDelay: '0.3s' }}>
       {/* Animated border glow */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-red/30 via-purple-500/30 to-blue-500/30 blur-2xl opacity-60 animate-pulse-slow -z-10"></div>
       

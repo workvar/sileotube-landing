@@ -24,7 +24,7 @@ const HeroCTA: React.FC<HeroCTAProps> = ({ onOpenModal }) => {
   }, []);
 
   return (
-    <div className="animate-fade-in relative z-30" style={{ animationDelay: '0.1s' }} ref={dropdownRef}>
+    <div className="animate-fade-in relative z-30 mb-4 md:mb-0" style={{ animationDelay: '0.1s' }} ref={dropdownRef}>
       <button 
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="group relative flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(255,0,0,0.2)] active:scale-95 overflow-hidden"

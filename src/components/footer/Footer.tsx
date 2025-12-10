@@ -1,21 +1,56 @@
-import { EXTENSION_URL, APP_NAME } from '@/constants';
-import FooterBrand from './FooterBrand';
 import FooterLinks from './FooterLinks';
-import FooterBottom from './FooterBottom';
+import Image from 'next/image';
+export default function Footer() {
+  const productLinks = [
+    { label: 'SileoTube', href: '#', isExternal: true },
+    { label: 'ProjeX', href: '#', isExternal: true },
+    // { label: 'DeepWriter', href: '#', isExternal: true },
+    // { label: 'Changelog', href: '#', isExternal: true },
+  ];
 
-const Footer: React.FC = () => {
+  const companyLinks = [
+    { label: 'About Us', href: '/about' },
+    { label: 'Mission', href: '/mission' },
+    { label: 'Media Kit', href: '/media-kit' },
+    // { label: 'Careers', href: '#', isExternal: true },
+    { label: 'Contact', href: '/contact' },
+  ];
+
+  const legalLinks = [
+    { label: 'Privacy Policy', href: '/privacy-policy', isExternal: false },
+    { label: 'Terms of Service', href: '/terms', isExternal: false },
+    { label: 'Cookie Policy', href: '/cookie-policy', isExternal: false },
+  ];
+
   return (
-    <footer className="bg-background text-zinc-900 py-16 border-t border-zinc-100">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
-          <FooterBrand />
-          <FooterLinks />
+    <footer className="bg-stone-100 border-t border-stone-200 pb-12 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-24">
+          <div className="space-y-6">
+            <Image src="https://ik.imagekit.io/canarygrapher/workvar/Brand%20Assets/Black-W%20Logo-Transparent_vpxZSMC3g.png" alt="WorkVar" width={50} height={100} />
+            <span className="font-serif text-sm bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">Workवार. Your Productivity OS</span>            
+            <p className="text-stone-500 text-sm leading-relaxed">
+              Reconnecting with what matters. Tools for deep work and sustainable productivity.
+            </p>
+          </div>
+
+          <FooterLinks title="Products" links={productLinks} />
+          <FooterLinks title="Company" links={companyLinks} />
+          <FooterLinks title="Legal" links={legalLinks} />
         </div>
-        <FooterBottom />
+
+        <div className="mt-20 pt-8 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-sm text-stone-400">
+          <p>© {new Date().getFullYear()} WorkVar Pvt. Ltd. All rights reserved.</p>
+          <div className="flex space-x-8 mt-6 md:mt-0">
+            <a href="#" className="hover:text-stone-600 transition-colors">Twitter</a>
+            <a href="#" className="hover:text-stone-600 transition-colors">Instagram</a>
+            <a href="#" className="hover:text-stone-600 transition-colors">Facebook</a>
+            <a href="#" className="hover:text-stone-600 transition-colors">YouTube</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
-};
+}
 
-export default Footer;
 

@@ -1,4 +1,4 @@
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Circle } from 'lucide-react';
 
 interface CTAContentProps {
   onOpenModal: () => void;
@@ -16,7 +16,7 @@ const CTAContent: React.FC<CTAContentProps> = ({ onOpenModal }) => {
         <span className="bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">focus today.</span>
       </h2>
       <p className="text-zinc-600 text-xl mb-10 max-w-lg leading-relaxed">
-        Stop fighting the algorithm. Start using YouTube as the educational tool it was meant to be.
+        Stop fighting the algorithm. Start using YouTube as a knowledge tool to upgrade your skills.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4">
@@ -29,9 +29,9 @@ const CTAContent: React.FC<CTAContentProps> = ({ onOpenModal }) => {
       </div>
       
       <div className="mt-8 flex items-center gap-6 text-sm text-zinc-500 font-medium">
-        <span>• No account needed</span>
-        <span>• Privacy focused</span>
-        <span>• No tracking</span>
+        <span className="flex items-center gap-2"><Circle size={5} className="bg-lime-400 rounded-full" /> <span>No account needed</span></span>
+        <span className="flex items-center gap-2"><Circle size={5} className="bg-cyan-500 rounded-full" /> <span>Privacy focused</span></span>
+        <span className="flex items-center gap-2"><Circle size={5} className="bg-pink-500 rounded-full" /> <span>No tracking</span></span>
       </div>
     </div>
   );

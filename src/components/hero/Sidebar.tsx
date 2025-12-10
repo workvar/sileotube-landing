@@ -4,7 +4,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isFocusedMode }) => {
   return (
-    <div className={`w-64 border-r border-zinc-100 p-4 space-y-4 transition-all duration-700 transform ${isFocusedMode ? '-translate-x-full opacity-0 w-0 p-0 border-none' : 'translate-x-0 opacity-100'}`}>
+    <div className={`w-[15%] min-w-[180px] max-w-[240px] border-r border-zinc-100 p-4 space-y-4 transition-all duration-700 transform ${isFocusedMode ? '-translate-x-full opacity-0 w-0 min-w-0 max-w-0 p-0 border-none overflow-hidden' : 'translate-x-0 opacity-100'}`}>
       <div className="space-y-2">
         <div className="h-8 bg-zinc-100 rounded-md w-full"></div>
         <div className="h-8 bg-zinc-50 rounded-md w-3/4"></div>

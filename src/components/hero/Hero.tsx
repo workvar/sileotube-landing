@@ -21,13 +21,13 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center relative z-10">
         {/* Vertically Centered Text Section */}
-        <div className="min-h-[85vh] flex flex-col justify-center items-center w-full pt-16 pb-12 md:pb-16 relative">
+        <div className="min-h-[85vh] flex flex-col justify-center items-center w-full pt-16 relative">
           <HeroHeader />
           <HeroCTA onOpenModal={onOpenModal} />
         </div>
 
         {/* Hero Image with Animation */}
-        <div className="relative w-full mt-0 md:-mt-20">
+        <div className="relative w-full">
           <HeroImage />
         </div>
       </div>

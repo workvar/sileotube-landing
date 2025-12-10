@@ -63,7 +63,7 @@ const HeroImage = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-6xl animate-slide-up pb-32 z-10" style={{ animationDelay: '0.3s' }}>
+    <div className="relative w-full max-w-6xl animate-slide-up pb-16 md:pb-20 lg:pb-32 z-10" style={{ animationDelay: '0.3s' }}>
       {/* Animated border glow */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-red/30 via-purple-500/30 to-blue-500/30 blur-2xl opacity-60 animate-pulse-slow -z-10"></div>
       
@@ -74,7 +74,7 @@ const HeroImage = () => {
         {/* Shimmer effect */}
         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer pointer-events-none"></div>
         
-        <div className="rounded-lg overflow-hidden bg-white relative aspect-[16/10] border border-zinc-200 shadow-inner group">
+        <div className="rounded-lg overflow-hidden bg-white relative aspect-[16/10] border border-zinc-200 shadow-inner group flex flex-col">
           <BrowserUI isFocusedMode={isFocusedMode} />
           <FocusModeIndicator isFocusedMode={isFocusedMode} />
         </div>

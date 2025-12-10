@@ -4,7 +4,7 @@ interface RecommendationsProps {
 
 const Recommendations: React.FC<RecommendationsProps> = ({ isFocusedMode }) => {
   return (
-    <div className={`w-80 border-l border-zinc-100 p-4 space-y-4 overflow-hidden transition-all duration-700 transform ${isFocusedMode ? 'translate-x-full opacity-0 w-0 p-0 border-none' : 'translate-x-0 opacity-100'}`}>
+    <div className={`w-[20%] min-w-[200px] max-w-[280px] border-l border-zinc-100 p-4 space-y-4 overflow-hidden transition-all duration-700 transform ${isFocusedMode ? 'translate-x-full opacity-0 w-0 min-w-0 max-w-0 p-0 border-none' : 'translate-x-0 opacity-100'}`}>
       <div className="flex gap-2">
         <div className="w-24 h-14 bg-zinc-200 rounded"></div>
         <div className="flex-1 space-y-2">

@@ -15,8 +15,8 @@ interface ShowcaseDisplayProps {
 
 const ShowcaseDisplay: React.FC<ShowcaseDisplayProps> = ({ tabs, activeTab }) => {
   return (
-    <div className="lg:w-2/3">
-      <div className="bg-white rounded-3xl shadow-2xl border border-zinc-200 p-2 lg:p-4 overflow-hidden relative group">
+    <div className="w-full lg:w-2/3">
+      <div className="bg-white rounded-b-3xl lg:rounded-3xl shadow-2xl border border-zinc-200 border-t-0 lg:border-t p-2 lg:p-4 overflow-hidden relative group">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-red via-purple-500 to-blue-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
         
         {/* Browser Bar Mockup */}

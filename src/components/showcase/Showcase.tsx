@@ -63,7 +63,7 @@ const Showcase: React.FC = () => {
           <p className="text-xl text-zinc-500 max-w-2xl mx-auto">See how SileoTube transforms your YouTube interface into a tool for learning, not scrolling.</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
           <ShowcaseTabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
           <ShowcaseDisplay tabs={tabs} activeTab={activeTab} />
         </div>

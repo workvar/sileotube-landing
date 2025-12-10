@@ -28,10 +28,10 @@ const CTAContent: React.FC<CTAContentProps> = ({ onOpenModal }) => {
         </button>
       </div>
       
-      <div className="mt-8 flex items-center gap-6 text-sm text-zinc-500 font-medium">
-        <span className="flex items-center gap-2"><Circle size={5} className="bg-lime-400 rounded-full" /> <span>No account needed</span></span>
-        <span className="flex items-center gap-2"><Circle size={5} className="bg-cyan-500 rounded-full" /> <span>Privacy focused</span></span>
-        <span className="flex items-center gap-2"><Circle size={5} className="bg-pink-500 rounded-full" /> <span>No tracking</span></span>
+      <div className="mt-8 flex items-center gap-3 md:gap-6 text-sm text-zinc-500 font-medium">
+        <span className="flex items-center gap-1 md:gap-2"><Circle size={5} className="bg-lime-400 rounded-full" /> <span>No account needed</span></span>
+        <span className="flex items-center gap-1 md:gap-2"><Circle size={5} className="bg-cyan-500 rounded-full" /> <span>Privacy focused</span></span>
+        <span className="flex items-center gap-1 md:gap-2"><Circle size={5} className="bg-pink-500 rounded-full" /> <span>No tracking</span></span>
       </div>
     </div>
   );

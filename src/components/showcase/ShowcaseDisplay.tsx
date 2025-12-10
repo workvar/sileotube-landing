@@ -56,7 +56,7 @@ const ShowcaseDisplay: React.FC<ShowcaseDisplayProps> = ({ tabs, activeTab }) =>
         <div className="md:hidden bg-white border-t border-zinc-100 p-6">
           <h4 className="font-bold text-zinc-900 mb-2">{tabs[activeTab].header}</h4>
           <p className="text-zinc-600 text-sm mb-4">{tabs[activeTab].description}</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
+          <div className="flex flex-col gap-x-6 gap-y-2">
             {tabs[activeTab].features.map((feature, i) => (
               <div key={i} className="flex items-center gap-2 text-xs font-semibold text-zinc-500">
                 <CheckCircle2 size={12} className="text-brand-red" />

@@ -37,8 +37,8 @@ const ShowcaseDisplay: React.FC<ShowcaseDisplayProps> = ({ tabs, activeTab }) =>
             className="w-full h-full object-cover object-top transition-all duration-500"
           />
           
-          {/* Feature Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-zinc-100 p-6 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300">
+          {/* Feature Overlay - Desktop only (hidden on mobile) */}
+          <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-zinc-100 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
             <h4 className="font-bold text-zinc-900 mb-2">{tabs[activeTab].header}</h4>
             <p className="text-zinc-600 text-sm mb-4">{tabs[activeTab].description}</p>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
@@ -49,6 +49,20 @@ const ShowcaseDisplay: React.FC<ShowcaseDisplayProps> = ({ tabs, activeTab }) =>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Mobile Content - Shown below image on mobile */}
+        <div className="md:hidden bg-white border-t border-zinc-100 p-6">
+          <h4 className="font-bold text-zinc-900 mb-2">{tabs[activeTab].header}</h4>
+          <p className="text-zinc-600 text-sm mb-4">{tabs[activeTab].description}</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {tabs[activeTab].features.map((feature, i) => (
+              <div key={i} className="flex items-center gap-2 text-xs font-semibold text-zinc-500">
+                <CheckCircle2 size={12} className="text-brand-red" />
+                {feature}
+              </div>
+            ))}
           </div>
         </div>
       </div>

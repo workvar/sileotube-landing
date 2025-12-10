@@ -25,7 +25,7 @@ export default function Footer() {
       label: 'About Us',
       href: 'https://workvar.com/about',
       isExternal: true
-    },  
+    },
     {
       label: 'Mission',
       href: 'https://workvar.com/mission',
@@ -54,9 +54,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-24">
           <div className="space-y-6">
-            <Image src="https://ik.imagekit.io/canarygrapher/workvar/Brand%20Assets/workvar-black_3DVqwQHM8.png?updatedAt=1765177178950" alt="WorkVar" width={50} height={100} />
-            <span className="font-serif text-sm bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">Workवार. Your Productivity OS</span>
-            <p className="text-stone-500 text-sm leading-relaxed">
+            <Image src="https://ik.imagekit.io/canarygrapher/workvar/Brand%20Assets/workvar-black_3DVqwQHM8.png?updatedAt=1765177178950" alt="WorkVar" width={70} height={150} className="mb-4 md:mb-0" />
+            <p className="text-xl md:text-sm font-serif bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">Workवार. Your Productivity OS</p>
+            <p className="text-stone-500 text-base md:text-sm leading-relaxed">
               Reconnecting with what matters. Tools for deep work and sustainable productivity.
             </p>
           </div>
@@ -66,14 +66,27 @@ export default function Footer() {
           <FooterLinks title="Legal" links={legalLinks} />
         </div>
 
-        <div className="mt-20 pt-8 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-sm text-stone-400">
-          <p>© {new Date().getFullYear()} WorkVar Pvt. Ltd. All rights reserved.</p>
-          <div className="flex space-x-8 mt-6 md:mt-0">
+        {/* social links */}
+        <div className="flex justify-evenly my-6 text-stone-500 border-t border-stone-200 md:hidden">
+          <div className="flex space-x-8 order-1 md:order-2 mt-6">
             {SOCIAL_LINKS.map((link) => (
-              <a key={link.label} href={link.href} className="hover:text-stone-600 transition-colors">
+              <a key={link.label} href={link.href} className="hover:text-stone-600 transition-colors text-sm">
                 {link.label}
               </a>
             ))}
+          </div>
+        </div>
+
+        <div className="mt-5 pt-8 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-xs text-stone-400">
+          <div className="flex space-x-8 order-1 md:order-2 hidden md:flex">
+            {SOCIAL_LINKS.map((link) => (
+              <a key={link.label} href={link.href} className="hover:text-stone-600 transition-colors text-sm">
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <div className="flex flex-col md:flex-row items-center gap-6 w-full md:w-auto">
+            <p className="order-2 md:order-1">© {new Date().getFullYear()} WorkVar Pvt. Ltd. All rights reserved.</p>
           </div>
         </div>
       </div>

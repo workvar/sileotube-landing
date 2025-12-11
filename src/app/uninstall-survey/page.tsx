@@ -6,14 +6,16 @@ import { CheckCircle2, AlertCircle } from 'lucide-react';
 import surveyConfig from '@/data/uninstall-survey.json';
 import DownloadModal from '@/components/download-modal/DownloadModal';
 
+// Shape of local form state
 interface SurveyFormData {
   mainReason: string;
   satisfiedLevel: number | null;
   suggestions: string;
-  beContacted: boolean;
+  beContacted: boolean | null;
   email: string;
 }
 
+// Shape of question config loaded from JSON
 interface QuestionConfig {
   id: string;
   questionNumber: number;
@@ -34,21 +36,20 @@ interface QuestionConfig {
   }>;
 }
 
+// All questions (driven by JSON config)
 const questions = surveyConfig.questions as QuestionConfig[];
 
-// Calculate total required questions
-const TOTAL_REQUIRED_QUESTIONS = questions.filter((q) => q.isRequired).length;
-
 export default function UninstallSurveyPage() {
+  // Form state (answers)
   const [formData, setFormData] = useState<SurveyFormData>({
     mainReason: '',
     satisfiedLevel: null,
     suggestions: '',
-    beContacted: false,
+    beContacted: null,
     email: '',
   });
+  // UI state
   const [currentStep, setCurrentStep] = useState(0);
-  const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -60,9 +61,7 @@ export default function UninstallSurveyPage() {
     setRecaptchaSiteKey(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '');
   }, []);
 
-  // Calculate progress based on answered questions
-  // Progress increases automatically when user selects an answer
-  // Each question is worth 25% (4 questions total = 100%)
+  // Progress helpers: count answered questions (25% each)
   const isQuestionAnswered = (question: QuestionConfig): boolean => {
     if (question.id === 'mainReason') {
       return formData.mainReason !== '';
@@ -75,14 +74,10 @@ export default function UninstallSurveyPage() {
     } else if (question.id === 'beContacted') {
       // Only count as answered if user has reached this step (step 3)
       // If they selected "Yes", email must be provided
-      if (currentStep < 3) {
-        return false;
-      }
-      if (formData.beContacted) {
-        return formData.email !== '';
-      }
-      // If beContacted is false and user is on step 3, it's answered
-      return true;
+      if (currentStep < 3) return false;
+      if (formData.beContacted === true) return formData.email !== '';
+      if (formData.beContacted === false) return true;
+      return false; // still not answered
     }
     return false;
   };
@@ -90,7 +85,7 @@ export default function UninstallSurveyPage() {
   const answeredQuestions = questions.filter((q) => isQuestionAnswered(q)).length;
   const progress = (answeredQuestions / questions.length) * 100;
 
-  // Get current question number with optional marker
+  // Human-friendly question number display
   const getQuestionNumber = (step: number): string => {
     const question = questions[step];
     if (!question) return '';
@@ -98,9 +93,6 @@ export default function UninstallSurveyPage() {
   };
 
   const handleNext = () => {
-    // Mark current step as completed when moving to next step
-    setCompletedSteps((prev) => new Set([...prev, currentStep]));
-
     if (currentStep < questions.length - 1) {
       setCurrentStep(currentStep + 1);
     }
@@ -113,6 +105,7 @@ export default function UninstallSurveyPage() {
   };
 
   const handleSubmit = async () => {
+    // Guard required fields before submit
     if (!formData.mainReason || formData.satisfiedLevel === null) {
       setSubmitStatus('error');
       return;
@@ -122,9 +115,6 @@ export default function UninstallSurveyPage() {
       setSubmitStatus('error');
       return;
     }
-
-    // Mark current step as completed before submitting
-    setCompletedSteps((prev) => new Set([...prev, currentStep]));
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
@@ -364,7 +354,11 @@ export default function UninstallSurveyPage() {
           ) : (
             <button
               onClick={handleSubmit}
-              disabled={isSubmitting || (formData.beContacted && !formData.email)}
+              disabled={
+                isSubmitting ||
+                (formData.beContacted === null) ||
+                (formData.beContacted === true && !formData.email)
+              }
               className="px-6 py-3 bg-brand-red text-white rounded-lg hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {isSubmitting ? 'Submitting...' : 'Submit'}

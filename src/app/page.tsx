@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Navbar from '@/components/navbar/Navbar';
 import Hero from '@/components/hero/Hero';
 import Showcase from '@/components/showcase/Showcase';
@@ -12,8 +13,10 @@ import Footer from '@/components/footer/Footer';
 import DownloadModal from '@/components/download-modal/DownloadModal';
 import CTASection from '@/components/cta-section/CTASection';
 
-export default function Home() {
+function HomeContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const redirectType = searchParams.get('redirectType');
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -24,7 +27,7 @@ export default function Home() {
       <DownloadModal isOpen={isModalOpen} onClose={closeModal} />
       
       <main>
-        <Hero onOpenModal={openModal} />
+        <Hero onOpenModal={openModal} isInstallRedirect={redirectType === 'install'} />
         <Showcase />
         <Features />
         <Customization />
@@ -34,6 +37,18 @@ export default function Home() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-background text-zinc-900">
+        <Navbar onOpenModal={() => {}} />
+      </div>
+    }>
+      <HomeContent />
+    </Suspense>
   );
 }
 

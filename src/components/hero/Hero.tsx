@@ -8,9 +8,10 @@ import FloatingElements from './FloatingElements';
 
 interface HeroProps {
   onOpenModal: () => void;
+  isInstallRedirect?: boolean;
 }
 
-const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
+const Hero: React.FC<HeroProps> = ({ onOpenModal, isInstallRedirect = false }) => {
   return (
     <section className="relative bg-background overflow-hidden z-10">
       {/* Animated Background */}
@@ -22,8 +23,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center relative z-10">
         {/* Vertically Centered Text Section */}
         <div className="min-h-[85vh] flex flex-col justify-center items-center w-full pt-16 relative">
-          <HeroHeader />
-          <HeroCTA onOpenModal={onOpenModal} />
+          <HeroHeader isInstallRedirect={isInstallRedirect} />
+          <HeroCTA isInstallRedirect={isInstallRedirect} />
         </div>
 
         {/* Hero Image with Animation */}

@@ -5,10 +5,10 @@ import { ChevronDown } from 'lucide-react';
 import BrowserDropdown from './BrowserDropdown';
 
 interface HeroCTAProps {
-  onOpenModal: () => void;
+  isInstallRedirect?: boolean;
 }
 
-const HeroCTA: React.FC<HeroCTAProps> = ({ onOpenModal }) => {
+const HeroCTA: React.FC<HeroCTAProps> = ({ isInstallRedirect = false }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -21,6 +21,18 @@ const HeroCTA: React.FC<HeroCTAProps> = ({ onOpenModal }) => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  if (isInstallRedirect) {
+    return (
+      <div className="animate-fade-in relative z-30 mb-4 md:mb-8 lg:mb-0" style={{ animationDelay: '0.1s' }}>
+        <div className="group relative flex items-center justify-center gap-3 px-12 py-8 md:px-16 md:py-10">
+          <span className="relative z-10 text-2xl font-bold bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text">
+            Thank you for downloading SileoTube
+          </span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="animate-fade-in relative z-30 mb-4 md:mb-8 lg:mb-0" style={{ animationDelay: '0.1s' }} ref={dropdownRef}>

@@ -1,4 +1,7 @@
-const HeroHeader = () => {
+interface HeroHeaderProps {
+  isInstallRedirect?: boolean;
+}
+const HeroHeader: React.FC<HeroHeaderProps> = ({ isInstallRedirect = false }) => {
   return (
     <div className="max-w-4xl mx-auto mb-12 animate-fade-in">
       <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-gradient-to-r from-green-600/10 via-green-800/5 to-transparent border border-green-800/20 text-xs font-semibold tracking-wide text-green-800 uppercase backdrop-blur-sm shadow-sm">
@@ -10,13 +13,13 @@ const HeroHeader = () => {
       </div>
       <h1 className="text-6xl md:text-8xl font-bold text-zinc-900 leading-[1.05] mb-8 tracking-tight relative">
         <span className="relative inline-block">
-          Master your
+          {isInstallRedirect ? 'SileoTube is now' : 'Master your'}
           <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-brand-red/20 via-brand-red/10 to-transparent blur-xl -z-10"></span>
         </span>
         <br/>
         <span className="relative inline-block">
           <span className="bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">
-            attention.
+            {isInstallRedirect ? 'installed!' : 'attention.'}
           </span>
           <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-transparent via-brand-red/30 to-transparent blur-xl -z-10 animate-pulse"></span>
         </span>

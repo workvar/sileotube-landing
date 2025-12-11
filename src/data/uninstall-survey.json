@@ -1,0 +1,67 @@
+{
+  "questions": [
+    {
+      "id": "mainReason",
+      "questionNumber": 1,
+      "isRequired": true,
+      "title": "What was the main reason for uninstalling SileoTube?",
+      "type": "radio",
+      "options": [
+        "Did not find it useful",
+        "Too complicated to use",
+        "Performance issues",
+        "Privacy concerns",
+        "Temporary uninstall",
+        "Installed just to try it out"
+      ],
+      "additionalFields": []
+    },
+    {
+      "id": "satisfiedLevel",
+      "questionNumber": 2,
+      "isRequired": true,
+      "title": "How satisfied were you with SileoTube?",
+      "type": "radio",
+      "options": [
+        { "value": 1, "label": "Very Dissatisfied" },
+        { "value": 2, "label": "Dissatisfied" },
+        { "value": 3, "label": "Neutral" },
+        { "value": 4, "label": "Satisfied" },
+        { "value": 5, "label": "Very Satisfied" }
+      ],
+      "additionalFields": []
+    },
+    {
+      "id": "suggestions",
+      "questionNumber": 3,
+      "isRequired": false,
+      "title": "Do you have any suggestions for improvement?",
+      "type": "textarea",
+      "placeholder": "Share your thoughts...",
+      "additionalFields": []
+    },
+    {
+      "id": "beContacted",
+      "questionNumber": 4,
+      "isRequired": true,
+      "title": "Would you like us to contact you?",
+      "description": "If you'd like to share more feedback or be notified of updates, we'd love to hear from you.",
+      "type": "radio",
+      "options": [
+        { "value": false, "label": "No, leave me alone" },
+        { "value": true, "label": "Yes, I'd like to be contacted" }
+      ],
+      "additionalFields": [
+        {
+          "fieldId": "email",
+          "type": "email",
+          "label": "Email Address",
+          "placeholder": "your.email@example.com",
+          "showWhen": "beContacted",
+          "showWhenValue": true,
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}

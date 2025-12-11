@@ -44,9 +44,9 @@ export default function Footer() {
   ];
 
   const legalLinks = [
-    { label: 'Privacy Policy', href: '/privacy-policy', isExternal: false },
-    { label: 'Terms of Service', href: '/terms', isExternal: false },
-    { label: 'Cookie Policy', href: '/cookie-policy', isExternal: false },
+    { label: 'Privacy Policy', href: 'https://www.workvar.com/privacy-policy', isExternal: true },
+    { label: 'Terms of Service', href: 'https://www.workvar.com/terms', isExternal: true },
+    { label: 'Cookie Policy', href: 'https://www.workvar.com/cookie-policy', isExternal: true },
   ];
 
   return (

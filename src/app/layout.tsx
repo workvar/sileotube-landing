@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Analytics from '@/components/analytics/Analytics';
 import GTMNoscript from '@/components/analytics/GTMNoscript';
+import WakeDB from '@/components/wake-db/WakeDB';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
+        <WakeDB />
         <Analytics />
         <GTMNoscript />
         {children}

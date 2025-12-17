@@ -25,10 +25,24 @@ const HeroCTA: React.FC<HeroCTAProps> = ({ isInstallRedirect = false }) => {
   if (isInstallRedirect) {
     return (
       <div className="animate-fade-in relative z-30 mb-4 md:mb-8 lg:mb-0" style={{ animationDelay: '0.1s' }}>
-        <div className="group relative flex items-center justify-center gap-3 px-12 py-8 md:px-16 md:py-10">
-          <span className="relative z-10 text-2xl font-bold bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text">
-            Thank you for downloading SileoTube
-          </span>
+        <div className="flex flex-col items-center justify-center gap-5">
+          <div className="group relative flex items-center justify-center gap-3 px-12 py-8 md:px-16 md:py-10">
+            <span className="relative z-10 text-2xl font-bold bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-clip-text">
+              Thank you for downloading SileoTube
+            </span>
+          </div>
+          <button
+            onClick={() => window.open('https://try-sileotube.workvar.com', '_blank')}
+            className="group relative flex items-center justify-center gap-3 px-10 py-5 text-white rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(255,0,0,0.2)] active:scale-95 overflow-hidden"
+          >
+            {/* Animated gradient background - same as "attention" text */}
+            <span className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-brand-red to-zinc-900 bg-[length:200%_auto] animate-gradient-x rounded-full"></span>
+            
+            {/* Shine effect */}
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-full"></span>
+            
+            <span className="relative z-10 text-lg font-semibold flex items-center gap-2">Interactive Demo</span>
+          </button>
         </div>
       </div>
     );

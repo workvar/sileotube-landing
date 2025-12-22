@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Home, PlaySquare, Monitor } from 'lucide-react';
+import { Home, PlaySquare, Monitor, VideoOff } from 'lucide-react';
 import ShowcaseTabs from './ShowcaseTabs';
 import ShowcaseDisplay from './ShowcaseDisplay';
 
@@ -52,6 +52,18 @@ const Showcase: React.FC = () => {
         "Hides from Search results"
       ],
       image: "https://ik.imagekit.io/canarygrapher/workvar/main-website/images/products/SileoTube/shorts_Tz3Gqotdy2.png"
+    },
+    {
+      title: "Grayscaled Thumbnails",
+      icon: <VideoOff size={18} />,
+      header: "Grayscaled Thumbnails",
+      description: "Reduce visual clutter by converting thumbnails to grayscale. This helps you focus on the content and avoid distractions.",
+      features: [
+        "Grayscaled thumbnails",
+        "Reduces visual clutter",
+        "Improves focus"
+      ],
+      image: "https://ik.imagekit.io/canarygrapher/workvar/main-website/images/products/SileoTube/grayscale_lJOn_7nne.png"
     }
   ];
 
